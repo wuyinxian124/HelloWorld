@@ -23,6 +23,38 @@ http://www.androidpush.cn/post/2012-11-23/40043965893
 http://www.androidpush.cn/
 http://www.androidpush.cn/post/2012-11-23/40043965893
 实现 Android im 和服务器 开发。
+环境准备：安装MySQL 5.5 root 用户密码最好设为 tiger
+建表和索引：
+CREATE TABLE server_info (
+  server_id VARCHAR(50)
+  ); 
+
+CREATE TABLE channel (
+  user_count INT,
+  name VARCHAR(100),
+  createTime DATETIME 
+  );
+CREATE INDEX idx_channel_name on channel(name);
+CREATE INDEX idx_channel_createTime on channel(createTime);
+
+
+CREATE TABLE user (
+  udid VARCHAR(50), 
+  name VARCHAR(100),
+  createTime DATETIME 
+  );
+CREATE INDEX idx_user_udid on user(udid);
+CREATE INDEX idx_user_name on user(name);
+CREATE INDEX idx_user_createTime on user(createTime);
+
+
+CREATE TABLE user_channel (
+  udid VARCHAR(50), 
+  channel_name VARCHAR(100)
+  );
+CREATE INDEX idx_uc_udid on user_channel(udid);
+CREATE INDEX idx_uc_channel_name on user_channel (channel_name);
+更新完之后，在导入jpush-server项目。（有一些变化，到时候q我）
 -------------------罗侨友-------------------------
 
 -------------------黄超---------------------------
