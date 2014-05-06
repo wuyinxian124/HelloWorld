@@ -23,7 +23,7 @@ http://www.androidpush.cn/post/2012-11-23/40043965893
 http://www.androidpush.cn/
 http://www.androidpush.cn/post/2012-11-23/40043965893
 实现 Android im 和服务器 开发。
-环境准备：安装MySQL 5.5 root 用户密码最好设为 tiger
+环境准备：安装MySQL 5.5 root 用户密码最好设为 tiger。MySQL5.5 安装参考：http://www.jb51.net/article/23876.htm
 建表和索引：
 CREATE TABLE server_info (
   server_id VARCHAR(50)
